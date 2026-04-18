@@ -1,0 +1,33 @@
+.git
+__pycache__
+output
+outputs
+*.pth
+*.
+*.vscode
+
+# image
+*.gif
+*.mp4
+*.pdf
+*.csv
+
+# model
+*.pth
+*.pt
+*.npy
+*.ckpt
+*.pkl
+*.safetensors
+*.tar
+*.bat
+*.zip
+
+#temp
+*.pyc
+
+
+# log
+*.log
+*.txt
+events.*
