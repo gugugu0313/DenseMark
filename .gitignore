@@ -1,10 +1,14 @@
+# Nested git metadata (optional)
 .git
+
+# All dotfiles / dot-directories (.vscode, .idea, .env, …)
+.*
+!.gitignore
+!.github/
+
 __pycache__
 output
 outputs
-*.pth
-*.
-*.vscode
 
 # image
 *.gif
@@ -23,9 +27,8 @@ outputs
 *.bat
 *.zip
 
-#temp
+# temp
 *.pyc
-
 
 # log
 *.log

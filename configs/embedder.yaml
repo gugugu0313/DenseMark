@@ -1,0 +1,314 @@
+model: vae_small
+
+vae_small:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 32
+    ch_mult: [1, 1, 1, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 32
+    ch_mult: [1, 1, 1, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+vae_big:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+vae_small_16:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 32
+    ch_mult: [1, 1, 1, 1, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 32
+    ch_mult: [1, 1, 1, 1, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+vae_big16:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+vae_big16_ch128:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 128
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 128
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+vae_big16_chde128:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 32
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 128
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+vae_big_16_mid5:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    mid_depth: 5
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    mid_depth: 5
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+
+vae_big_16_res3:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 3
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 3
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+vae_big_16_res5:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 5
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 5
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+
+vae_big_16_resde5:
+  msg_processor:
+    nbits: 16
+    hidden_size: 32     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 2, 2]
+    num_res_blocks: 5
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
+
+
+vae_big_8:
+  msg_processor:
+    nbits: 64
+    hidden_size: 128     # nbits * 2
+    msg_processor_type: 'binary+concat'
+  encoder:
+    in_channels: 3
+    z_channels: 4
+    resolution: 256  # only used for attn_resolutions
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    double_z: False
+  decoder:
+    in_channels: 3
+    z_channels: 36      # hidden_size + z_channels
+    resolution: 256
+    out_ch: 3
+    ch: 64
+    ch_mult: [1, 1, 1, 1, 2, 2]
+    num_res_blocks: 2
+    attn_resolutions: []
+    dropout: 0.0
+    tanh_out: True
